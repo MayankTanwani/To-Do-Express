@@ -7,7 +7,8 @@ var items = []
 getServerRequest()
 function getServerRequest() {
     $.get('/json',function (dataGot) {
-        if((dataGot!=="undefined")||(dataGot !== "")) {
+        if(!((dataGot == "undefined")||(dataGot === ""))) {
+            console.log("Data:" + dataGot+": Data")
             items = JSON.parse(dataGot)
         }
         else
