@@ -11,7 +11,11 @@ app.get('/json', readFile)
 app.post('/json',postFile)
 function readFile(req,res) {
     fs.readFile('./todolist.txt','utf8',function (err,data) {
-            if(err) throw err;
+        if(err) {
+            fs.writeFile('./todolist.txt', "", function (err) {
+                if (err) throw err;
+            });
+        }
             console.log(data)
             res.send(data)
         })
@@ -23,5 +27,5 @@ function postFile(req,res) {
 }
 app.set('port',process.env.PORT || 4000)
 app.listen(app.get('port'),function () {
-    console.log('Server started on http://localhost:2323/')
+    console.log('Server started on http://localhost:4000/')
 })

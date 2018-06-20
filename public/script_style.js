@@ -14,7 +14,7 @@ function getServerRequest() {
         else
             items = []
         refresh()
-    })
+    }).fail()
 }
 
 function postServerRequest(cur_items) {
