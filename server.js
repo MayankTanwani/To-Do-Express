@@ -17,10 +17,11 @@ function readFile(req,res) {
             });
         }
             console.log(data)
-            res.send(data)
+        res.send(data)
         })
 }
 function postFile(req,res) {
+    console.log("Writing")
     fs.writeFile('./todolist.txt',req.body["arr"],function (err) {
         console.log('Complete')
     })

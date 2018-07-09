@@ -35,16 +35,6 @@ function addItemToList() {
     refresh()
 }
 
-function addItemToList() {
-    var inputText = getData()
-    if(inputText === "" || inputText == null)
-        return
-    var listitem = new Item(inputText,false)
-    items.push(listitem)
-    postServerRequest(items)
-    refresh()
-}
-
 function refresh() {
     var list = document.getElementById("itemsList")
     if(list != null) {
